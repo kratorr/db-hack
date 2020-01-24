@@ -22,7 +22,7 @@ $ python3 manage.py shell
 Далее импортируем функции:
 
 ```python
->>> from scripts import fix_marks, remove_chastisements, create_commendation, 
+>>> from scripts import fix_marks, remove_chastisements, create_commendation, get_schoolkid
 ```
 Получем учетную запись ученика:
 ```python
@@ -35,7 +35,7 @@ $ python3 manage.py shell
 ```
 Убираем замечания:
 ```python
->>> remove_chastisements(schooldkid)
+>>> remove_chastisements(schoolkid)
 ```
 Добавляем похвалу:
 ```python
