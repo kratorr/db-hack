@@ -3,7 +3,7 @@ import random
 
 from datacenter.models import Schoolkid, Mark, Chastisement
 from datacenter.models import Lesson, Commendation
-from django.core.exceptions import MultipleObjectsReturned
+from django.core.exceptions import MultipleObjectsReturned, ObjectDoesNotExist
 
 
 text_commendations = [
@@ -25,8 +25,10 @@ def get_schoolkid(full_name):
     try:
         schoolkid = Schoolkid.objects.get(full_name__contains=full_name)
         return schoolkid
+    except ObjectDoesNotExist:
+        print('Ученик не найден.')
     except MultipleObjectsReturned:
-        print('Найдено более одного ученика, попробуйте уточнить запрос')
+        print('Найдено более одного ученика, попробуйте уточнить запрос.')
 
 
 def fix_marks(schoolkid):
@@ -53,7 +55,7 @@ def create_commendation(schoolkid, subject_name):
         subject=subject,
         year_of_study=schoolkid.year_of_study,
         group_letter=schoolkid.group_letter
-    ).order_by('-date')[0:1].get()
+    ).order_by('-date').first()
 
     new_commendation = Commendation.objects.create(
         text=random.choice(text_commendations),

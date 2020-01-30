@@ -1,14 +1,16 @@
 # Взламываем электронный дневник
 
 
-Этот репозитрий содержит скрипты для правки электроного дневника из репозитория
-[e-diary](https://github.com/kratorr/e-diary), позволяет исправить оценки, убрать замечания и добавить похвалу.
+Cкрипты для правки электронного дневника из репозитория
+[e-diary](https://github.com/kratorr/e-diary).
+
+Позволяет исправить оценки, убрать замечания и добавить похвалу.
 
 # Как установить
 
-Установите проект из [e-diary](https://github.com/kratorr/e-diary)
+Установите проект из [e-diary](https://github.com/kratorr/e-diary).
 
-Поместите файл scripts.py в директорию с проектом рядом с файлом manage.py
+Поместите файл scripts.py в директорию с проектом рядом с файлом manage.py.
 
 
 
@@ -24,7 +26,7 @@ $ python3 manage.py shell
 ```python
 >>> from scripts import fix_marks, remove_chastisements, create_commendation, get_schoolkid
 ```
-Получем учетную запись ученика:
+Получаем учетную запись ученика:
 ```python
 >>> schoolkid = get_schoolkid('Фролов Иван')
 ```
@@ -44,5 +46,5 @@ $ python3 manage.py shell
 
 # Цели проекта
 
-Код создан в учебных целях. В рамках учебного курса по веб-разработке - [DVMN.ORG](https://dvmn.org)
+Код создан в учебных целях. В рамках учебного курса по веб-разработке - [DVMN.ORG](https://dvmn.org).
 
